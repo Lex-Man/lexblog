@@ -1,0 +1,23 @@
+<!doctype html>
+<html xmlns:th="https://www.thymeleaf.org">
+<html lang="en">
+    <head>
+        <title>
+            Edit Document
+        </title>
+    </head>
+    <body>
+        <form action="#" th:action="@{/man/save}" th:object="${article}" method="post">
+            <label for="title">Title:</label><br>
+            <input type="text" th:field="*{title}" id="title" name="title"><br>
+            <label for="img">Image Path</label><br>
+            <input type="img" th:field="*{imgRef}" id="img" name="img"><br>
+            <label for="text">Text:</label><br>
+            <textarea id="text" th:field="*{text}" name="text" rows="4" cols="50">
+
+            </textarea>
+            <input type="hidden" th:field="*{id}" id="id" name="id"><br>
+            <input type="submit" value="submit">
+        </form>
+    </body>
+</html>
