@@ -2,8 +2,8 @@ spring:
   liquibase:
     change-log: classpath:/db/changelog/changelog-master.xml
   datasource:
-    driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/lexblog
+    driverClassName: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://192.168.1.203:3306/lexblog
     username: lexblog
     password: lexblog
 logging:

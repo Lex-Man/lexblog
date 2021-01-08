@@ -1,6 +1,6 @@
 package com.lexusmanson.lexblog.controller;
 
-import com.lexusmanson.lexblog.dto.Article;
+import com.lexusmanson.lexblog.dto.ArticleDTO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +16,7 @@ public class ManagementController {
 
     @GetMapping("/edit")
     public String edit(Model model){
-        Article article = new Article();
+        ArticleDTO article = new ArticleDTO();
         model.addAttribute("article", article);
         return "management/edit";
     }
@@ -27,7 +27,8 @@ public class ManagementController {
     }
 
     @PostMapping("/save")
-    public String save(Model model, @ModelAttribute Article article){
+    public String save(Model model, @ModelAttribute ArticleDTO article){
+
         return "temp";
     }
 

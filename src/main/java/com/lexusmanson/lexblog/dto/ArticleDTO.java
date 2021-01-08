@@ -11,7 +11,7 @@ import java.time.LocalDate;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Article {
+public class ArticleDTO {
 
     int id;
     String title;

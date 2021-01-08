@@ -11,7 +11,7 @@ import java.time.LocalDate;
 @Data
 @Builder
 @Entity
-public class Article {
+public class ArticleDomain {
 
     @Id
     @GeneratedValue

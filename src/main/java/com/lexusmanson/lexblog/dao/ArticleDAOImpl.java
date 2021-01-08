@@ -1,7 +1,7 @@
 package com.lexusmanson.lexblog.dao;
 
 import com.lexusmanson.lexblog.Repository.ArticleRepository;
-import com.lexusmanson.lexblog.dto.Article;
+import com.lexusmanson.lexblog.domain.ArticleDomain;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -12,7 +12,7 @@ public class ArticleDAOImpl implements ArticleDAO {
     ArticleRepository articleRepository;
 
     @Override
-    public void saveArticle(Article article) {
+    public void saveArticle(ArticleDomain article) {
         articleRepository.save(article);
     }
 }
