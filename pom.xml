@@ -37,6 +37,11 @@
 			<version>2.7.1</version>
 		</dependency>
 		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.22</version>
+		</dependency>
+		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
@@ -50,6 +55,11 @@
 			<groupId>org.liquibase</groupId>
 			<artifactId>liquibase-core</artifactId>
 			<version>4.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.googlecode.jmapper-framework</groupId>
+			<artifactId>jmapper-core</artifactId>
+			<version>1.6.1.CR2</version>
 		</dependency>
 
 	</dependencies>

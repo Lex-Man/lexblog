@@ -2,10 +2,10 @@ spring:
   liquibase:
     change-log: classpath:/db/changelog/changelog-master.xml
   datasource:
-    driverClassName: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://192.168.1.203:3306/lexblog
-    username: lexblog
-    password: lexblog
+    driverClassName: ${LEXBLOG_DRIVER:org.mariadb.jdbc.Driver}
+    url: ${LEXBLOG_URL:jdbc:mariadb://192.168.1.203:3306/lexblog}
+    username: ${LEXBLOG_USERNAME:lexblog}
+    password: ${LEXBLOG_PASSWORD:lexblog}
 logging:
   level:
     liquidbase: INFO

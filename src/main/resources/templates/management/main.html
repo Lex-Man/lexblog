@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Management</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>title</th>
+            <th>published</th>
+        </tr>
+        <tr>
+            <td rowspan="3">
+                <tr th:each="article: ${articles}">
+                    <td th:text="${article.id}"></td>
+                    <td th:text="${article.title}"></td>
+                    <td th:text="${article.published}"></td>
+                </tr>
+    <form action="#" th:action="@{/man/edit}" method="get">
+        <label for="submit">New Article</label>
+        <input id="submit" type="submit" value="submit">
+    </form>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

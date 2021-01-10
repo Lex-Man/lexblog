@@ -5,6 +5,9 @@ import com.lexusmanson.lexblog.domain.ArticleDomain;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+import java.util.Optional;
+
 @Repository
 public class ArticleDAOImpl implements ArticleDAO {
 
@@ -14,5 +17,15 @@ public class ArticleDAOImpl implements ArticleDAO {
     @Override
     public void saveArticle(ArticleDomain article) {
         articleRepository.save(article);
+    }
+
+    @Override
+    public Optional<ArticleDomain> loadArticle(int id) {
+        return articleRepository.findById(id);
+    }
+
+    @Override
+    public Iterable<ArticleDomain> getAllArticles() {
+        return articleRepository.findAll();
     }
 }
