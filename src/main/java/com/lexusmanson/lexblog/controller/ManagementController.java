@@ -12,13 +12,13 @@ import java.util.Optional;
 import java.util.Set;
 
 @Controller
-@RequestMapping("man/")
+@RequestMapping("man")
 public class ManagementController {
 
     @Autowired
     ManagementService managementService;
 
-    @GetMapping("/")
+    @GetMapping("")
     public String main(Model model){
         Set<ArticleDTO> articles = managementService.loadAllArticles();
         model.addAttribute("articles", articles);
@@ -39,11 +39,18 @@ public class ManagementController {
         return "management/edit";
     }
 
-    @PostMapping("/save")
+    @PostMapping(value="/save", params="action=submit")
     public RedirectView save(Model model, @ModelAttribute ArticleDTO article){
         managementService.saved(article);
 
         return new RedirectView("edit/" + article.getId());
+    }
+
+    @PostMapping(value="/save", params="action=return")
+    public String back(Model model, @ModelAttribute ArticleDTO article){
+        Set<ArticleDTO> articles = managementService.loadAllArticles();
+        model.addAttribute("articles", articles);
+        return "management/main";
     }
 
 }

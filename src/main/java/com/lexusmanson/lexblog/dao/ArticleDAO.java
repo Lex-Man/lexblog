@@ -2,7 +2,7 @@ package com.lexusmanson.lexblog.dao;
 
 import com.lexusmanson.lexblog.domain.ArticleDomain;
 
-import java.util.List;
+import java.time.LocalDate;
 import java.util.Optional;
 
 public interface ArticleDAO {
@@ -12,4 +12,6 @@ public interface ArticleDAO {
     Optional<ArticleDomain> loadArticle(int id);
 
     Iterable<ArticleDomain> getAllArticles();
+
+    void publishArticle(int id, LocalDate date);
 }

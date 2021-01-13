@@ -7,7 +7,9 @@ import com.lexusmanson.lexblog.domain.ArticleDomain;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.transaction.Transactional;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
@@ -28,6 +30,7 @@ public class ManagementServiceImpl implements ManagementService {
         ad.setEdited(LocalDate.now());
 
         articleDAO.saveArticle(ad);
+        article.setId(ad.getId());
     }
 
     @Override
@@ -46,5 +49,14 @@ public class ManagementServiceImpl implements ManagementService {
         Set<ArticleDTO> articles = new HashSet<>();
         domain.forEach(a -> articles.add(articleDTOMapper.getDestination(a)));
         return articles;
+    }
+
+    @Override
+    @Transactional
+    public boolean publishArticle(int id, String date) {
+
+        LocalDate localDate = LocalDate.parse(date, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+        articleDAO.publishArticle(id, localDate);
+        return false;
     }
 }

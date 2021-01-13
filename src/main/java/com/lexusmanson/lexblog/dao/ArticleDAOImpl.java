@@ -1,11 +1,11 @@
 package com.lexusmanson.lexblog.dao;
 
-import com.lexusmanson.lexblog.Repository.ArticleRepository;
+import com.lexusmanson.lexblog.repository.ArticleRepository;
 import com.lexusmanson.lexblog.domain.ArticleDomain;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
+import java.time.LocalDate;
 import java.util.Optional;
 
 @Repository
@@ -27,5 +27,10 @@ public class ArticleDAOImpl implements ArticleDAO {
     @Override
     public Iterable<ArticleDomain> getAllArticles() {
         return articleRepository.findAll();
+    }
+
+    @Override
+    public void publishArticle(int id, LocalDate date){
+        articleRepository.updatePublish(id, date);
     }
 }

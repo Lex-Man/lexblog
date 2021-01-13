@@ -16,7 +16,7 @@
             <td rowspan="3">
                 <tr th:each="article: ${articles}">
                     <td th:text="${article.id}"></td>
-                    <td th:text="${article.title}"></td>
+                    <td> <a th:href="@{/man/edit/{id}(id=${article.id})}"  th:text="${article.title}">link</a></td>
                     <td th:text="${article.published}"></td>
                 </tr>
     <form action="#" th:action="@{/man/edit}" method="get">

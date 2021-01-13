@@ -12,4 +12,6 @@ public interface ManagementService {
     Optional<ArticleDTO> loadArticle(int id);
 
     Set<ArticleDTO> loadAllArticles();
+
+    boolean publishArticle(int id, String date);
 }
