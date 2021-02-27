@@ -1,9 +1,36 @@
-<HTML>
+<HTML xmlns:th="http://www.w3.org/1999/xhtml">
     <HEAD>
         <TITLE>SPRING CONTROLLER TEST</TITLE>
     </HEAD>
     <body>
         <H1>THIS IS PURE CORRUPTION</H1>
+        <table>
+            <thead>
+            <tr>
+
+                <th>id</th>
+                <th>title</th>
+                <th>text</th>
+                <th>imgReg</th>
+                <th>created</th>
+                <th>published</th>
+                <th>edited</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="article: ${articles}">
+                <td th:text="${article.id}"></td>
+                <td th:text="${article.title}"></td>
+                <td th:text="${article.text}"></td>
+                <td th:text="${article.imgRef}"></td>
+                <td th:text="${article.created}"></td>
+                <td th:text="${article.published}"></td>
+                <td th:text="${article.edited}"></td>
+            </tr>
+            </tbody>
+        </table>
+
+
     </body>
 
 </HTML>

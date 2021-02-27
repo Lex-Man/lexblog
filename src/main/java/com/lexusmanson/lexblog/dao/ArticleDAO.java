@@ -1,6 +1,7 @@
 package com.lexusmanson.lexblog.dao;
 
 import com.lexusmanson.lexblog.domain.ArticleDomain;
+import org.springframework.data.domain.Page;
 
 import java.time.LocalDate;
 import java.util.Optional;
@@ -14,4 +15,6 @@ public interface ArticleDAO {
     Iterable<ArticleDomain> getAllArticles();
 
     void publishArticle(int id, LocalDate date);
+
+    Page<ArticleDomain> getLatestArticles();
 }
